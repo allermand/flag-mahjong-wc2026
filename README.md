@@ -5,9 +5,9 @@ by matching pairs of flags from the 48 nations of the FIFA World Cup 2026.
 
 ## How to play
 
-- The board (**A**) is a 4×6 grid of stacks, each layered a few flags deep — only
+- The board is a 4×6 grid of stacks, each layered a few flags deep — only
   the **top** flag of a stack is playable.
-- Click a flag to send it up to the selection tray (**B**).
+- Click a flag to send it up to the selection tray.
 - Click a flag in the tray that matches one already there and both **poof** away.
 - The tray holds at most **4** flags — fill it with 4 different flags and you **lose**.
 - Clear the board down to the **last matching pair** and those two flags are crowned
