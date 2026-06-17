@@ -7,7 +7,7 @@ export default function SelectionTray({ cards, poofIds, limit, onRegret }) {
   const empties = Math.max(0, limit - cards.length);
 
   return (
-    <section className="tray" aria-label="Selected cards">
+    <section className="tray" aria-label="Valgte kort">
       {cards.map((card) => (
         <Card
           key={card.id}

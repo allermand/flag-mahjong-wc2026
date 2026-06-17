@@ -5,7 +5,7 @@ import Card from './Card.jsx';
 // removed: the layer beneath simply becomes the new top.
 export default function GameBoard({ stacks, onCardClick }) {
   return (
-    <section className="board" aria-label="Game board">
+    <section className="board" aria-label="Spillebrett">
       {stacks.map((stack, i) => (
         <div className="stack" key={i}>
           {stack.map((card, layer) => {
