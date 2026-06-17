@@ -42,16 +42,23 @@ export function buildBoard(teams, layers) {
   return stacks;
 }
 
-// Reshuffle the flags still on the board into the same number of stacks,
-// re-tagging each card's origin. Cards already in the tray are untouched.
+// Reshuffle the flags still on the board. First count how many stacks the
+// board has, then shuffle the remaining flags and drop each into a randomly
+// chosen stack that still has room (capped at `layers`). Stacks therefore end
+// up with varying heights (anywhere from empty up to `layers`) rather than the
+// board being packed front-to-back. Cards already in the tray are untouched.
 export function reshuffleStacks(stacks, layers) {
   const stackCount = stacks.length;
   const cards = shuffle(stacks.flat());
   const next = Array.from({ length: stackCount }, () => []);
-  cards.forEach((card, idx) => {
-    const s = Math.floor(idx / layers);
+  for (const card of cards) {
+    const open = [];
+    for (let i = 0; i < stackCount; i += 1) {
+      if (next[i].length < layers) open.push(i);
+    }
+    const s = open[Math.floor(Math.random() * open.length)];
     next[s].push({ ...card, stack: s });
-  });
+  }
   return next;
 }
 
