@@ -213,7 +213,7 @@ export default function App() {
     <div className="app">
       <header className="app__header">
         <h1 className="app__title">
-          <span role="img" aria-label="fotball">⚽</span> Hvem vinner VM 2026?
+          Hvem vinner <span role="img" aria-label="fotball">⚽</span> VM 2026?
         </h1>
         <div className="app__stats">
           <span>Funnet: {matches} / {TOTAL_PAIRS}</span>
