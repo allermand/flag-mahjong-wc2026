@@ -24,7 +24,14 @@ export default function Card({ card, variant, onClick, covered = false, poof = f
           ? { scale: 1.5, opacity: 0, rotate: 10, filter: 'blur(4px)' }
           : { scale: 1, opacity: 1, rotate: 0, filter: 'blur(0px)' }
       }
-      transition={{ type: 'spring', stiffness: 500, damping: 30 }}
+      // Spring for scale/rotate, but a plain tween for `filter`: a spring can
+      // overshoot below its target, and blur(-0.00125px) is an invalid CSS value.
+      transition={{
+        type: 'spring',
+        stiffness: 500,
+        damping: 30,
+        filter: { type: 'tween', duration: 0.3 },
+      }}
       title={covered ? undefined : card.name}
     >
       <img
